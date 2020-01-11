@@ -1,1 +1,0 @@
-INSERT INTO burgers (name) VALUES ('Impossible Burger');
