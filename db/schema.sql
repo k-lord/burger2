@@ -1,0 +1,2 @@
+CREATE DATABASE burger2_DB;
+USE burger2_DB;
