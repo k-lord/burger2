@@ -4,16 +4,17 @@ module.exports = function (app) {
 
     // GET 
     app.get("/api/burger", function (req, res) {
-        db.Burger.findAll({}).then(function (dbBurger) {
-            res.json(dbBurger);
-        })
+        db.Burger.findAll({})
+            .then(function (dbBurger) {
+                res.json(dbBurger);
+            })
             .catch(function (err) {
                 res.json(err);
             })
     })
 
     // POST
-    app.post("api/burger", function (req, res) {
+    app.post("/api/burger", function (req, res) {
         db.Burger.create({
             name: req.body.name,
             devoured: req.body.devoured
