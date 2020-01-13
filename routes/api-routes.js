@@ -3,7 +3,7 @@ var db = require("../models");
 module.exports = function (app) {
 
     // GET 
-    app.get("/api/burgers", function (req, res) {
+    app.get("/api/burger", function (req, res) {
         db.Burger.findAll({}).then(function (dbBurger) {
             res.json(dbBurger);
         })
@@ -13,7 +13,7 @@ module.exports = function (app) {
     })
 
     // POST
-    app.post("api/burgers", function (req, res) {
+    app.post("api/burger", function (req, res) {
         db.Burger.create({
             name: req.body.name,
             devoured: req.body.devoured
@@ -27,7 +27,7 @@ module.exports = function (app) {
     })
 
     // DELETE
-    app.delete("/api/burgers/:id", function (req, res) {
+    app.delete("/api/burger/:id", function (req, res) {
         db.Burger.destroy({
             where: {
                 id: req.params.id
@@ -39,7 +39,7 @@ module.exports = function (app) {
     })
 
     // UPDATE
-    app.put("/api/burgers", function (req, res) {
+    app.put("/api/burger", function (req, res) {
         db.Burger.update(
             req.body,
             {
